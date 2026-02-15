@@ -1,0 +1,384 @@
+     └────────────────────────────────────────────────────────────
+
+  2026-02-15   11:08.15   /home/mobaxterm  cd Desktop/Keypair
+                                                                 ✓
+
+  /home/mobaxterm/Desktop/Keypair 
+  2026-02-15   11:08.33  ssh -i "haseeb.pem" ec2-user@ec2-3-110-94-250.ap-south-1.compute.amazonaws.com
+Warning: Permanently added 'ec2-3-110-94-250.ap-south-1.compute.amazonaws.com' (ED25519) to the list of known hosts.
+X11 forwarding request failed on channel 0
+   ,     #_
+   ~\_  ####_        Amazon Linux 2023
+  ~~  \_#####\
+  ~~     \###|
+  ~~       \#/ ___   https://aws.amazon.com/linux/amazon-linux-2023
+   ~~       V~' '->
+    ~~~         /
+      ~~._.   _/
+         _/ _/
+       _/m/'
+Last login: Sun Feb 15 01:50:15 2026 from 104.28.212.125
+[ec2-user@master ~]$ sudo -i
+[root@master ~]# passwd
+Changing password for user root.
+New password:
+Retype new password:
+passwd: all authentication tokens updated successfully.
+[root@master ~]# ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/root/.ssh/id_rsa):
+/root/.ssh/id_rsa already exists.
+Overwrite (y/n)? y
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /root/.ssh/id_rsa
+Your public key has been saved in /root/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:agmD4SHujdMtJVLG7fCSU6JoC9EFf74GJqIM3xAAj2c root@master
+The key's randomart image is:
++---[RSA 3072]----+
+|+ ...            |
+| =.o.            |
+|+ E*.o.          |
+|o*+=Bo           |
+|=====+. S        |
+|Bo*=*+ +         |
+|.*.+..*          |
+|  . .o           |
+|                 |
++----[SHA256]-----+
+[root@master ~]# vim inventory
+[root@master ~]# ssh-copy-id 13.234.110.26
+/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/root/.ssh/id_rsa.pub"
+The authenticity of host '13.234.110.26 (13.234.110.26)' can't be established.
+ED25519 key fingerprint is SHA256:0qfJGLQBo+X74VCm+k1k79UkRNdVLA85B6jz85aHKL0.
+This host key is known by the following other names/addresses:
+    ~/.ssh/known_hosts:1: 13.234.17.54
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+/usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
+root@13.234.110.26's password:
+
+Number of key(s) added: 1
+
+Now try logging into the machine, with:   "ssh '13.234.110.26'"
+and check to make sure that only the key(s) you wanted were added.
+
+[root@master ~]# vim playbook.yml
+[root@master ~]# ansible-playbook -i inventory  playbook.yml
+ERROR! 'host' is not a valid attribute for a Play
+
+The error appears to be in '/root/playbook.yml': line 2, column 3, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+---
+- host: all
+  ^ here
+[root@master ~]# vim playbook.yml
+Read from remote host ec2-3-110-94-250.ap-south-1.compute.amazonaws.com: Connection reset by peer
+Connection to ec2-3-110-94-250.ap-south-1.compute.amazonaws.com closed.
+client_loop: send disconnect: Connection reset by peer
+                                                                 ✗
+
+  /home/mobaxterm/Desktop/Keypair 
+  2026-02-15   11:23.25  ssh -i "haseeb.pem" ec2-user@ec2-3-110-94-250.ap-south-1.compute.amazonaws.com
+ssh: connect to host ec2-3-110-94-250.ap-south-1.compute.amazonaws.com port 22: Permission denied
+                                                                 ✗
+
+  /home/mobaxterm/Desktop/Keypair 
+  2026-02-15   11:23.32  ssh -i "haseeb.pem" ec2-user@ec2-3-110-94-250.ap-south-1.compute.amazonaws.com
+ssh: connect to host ec2-3-110-94-250.ap-south-1.compute.amazonaws.com port 22: Permission denied
+                                                                 ✗
+
+  /home/mobaxterm/Desktop/Keypair 
+  2026-02-15   11:23.47  ssh -i "haseeb.pem" ec2-user@ec2-3-110-94-250.ap-south-1.compute.amazonaws.com
+X11 forwarding request failed on channel 0
+   ,     #_
+   ~\_  ####_        Amazon Linux 2023
+  ~~  \_#####\
+  ~~     \###|
+  ~~       \#/ ___   https://aws.amazon.com/linux/amazon-linux-2023
+   ~~       V~' '->
+    ~~~         /
+      ~~._.   _/
+         _/ _/
+       _/m/'
+Last login: Sun Feb 15 06:09:07 2026 from 104.28.212.130
+[ec2-user@master ~]$
+[ec2-user@master ~]$ sudo -i
+[root@master ~]# vim playbook.yml
+[root@master ~]# ansible-playbook -i inventory  playbook.yml
+
+PLAY [all] *********************************************************************
+
+TASK [Gathering Facts] *********************************************************
+[WARNING]: Platform linux on host 13.234.110.26 is using the discovered Python
+interpreter at /usr/bin/python3.9, but future installation of another Python
+interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-
+core/2.15/reference_appendices/interpreter_discovery.html for more information.
+ok: [13.234.110.26]
+
+TASK [creating a file] *********************************************************
+changed: [13.234.110.26]
+
+PLAY RECAP *********************************************************************
+13.234.110.26              : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+[root@master ~]#
+[root@master ~]# vim playbook.yml
+[root@master ~]# ansible-playbook -i inventory  playbook.yml
+
+PLAY [all] *********************************************************************
+
+TASK [Gathering Facts] *********************************************************
+[WARNING]: Platform linux on host 13.234.110.26 is using the discovered Python
+interpreter at /usr/bin/python3.9, but future installation of another Python
+interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-
+core/2.15/reference_appendices/interpreter_discovery.html for more information.
+ok: [13.234.110.26]
+
+TASK [creating a file] *********************************************************
+changed: [13.234.110.26]
+
+TASK [creating dri] ************************************************************
+changed: [13.234.110.26]
+
+PLAY RECAP *********************************************************************
+13.234.110.26              : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+[root@master ~]# ll
+total 8
+-rw-r--r--. 1 root root  14 Feb 15 06:10 inventory
+-rw-r--r--. 1 root root 156 Feb 15 06:29 playbook.yml
+[root@master ~]# vim playbook.yml
+[root@master ~]# ansible-playbook -i inventory  playbook.yml
+
+PLAY [all] *********************************************************************
+
+TASK [Gathering Facts] *********************************************************
+[WARNING]: Platform linux on host 13.234.110.26 is using the discovered Python
+interpreter at /usr/bin/python3.9, but future installation of another Python
+interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-
+core/2.15/reference_appendices/interpreter_discovery.html for more information.
+ok: [13.234.110.26]
+
+TASK [creating a file] *********************************************************
+changed: [13.234.110.26]
+
+TASK [creating dri] ************************************************************
+ok: [13.234.110.26]
+
+TASK [adding user] *************************************************************
+changed: [13.234.110.26]
+
+PLAY RECAP *********************************************************************
+13.234.110.26              : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+[root@master ~]# vim playbook.yml
+[root@master ~]# ansible-playbook -i inventory  playbook.yml
+ERROR! conflicting action statements: user, uid
+
+The error appears to be in '/root/playbook.yml': line 7, column 17, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+      file: path=hasnain state=directory
+                ^ here
+
+There appears to be both 'k=v' shorthand syntax and YAML in this task. Only one syntax may be used.
+[root@master ~]# vim playbook.yml
+[root@master ~]# ansible-playbook -i inventory  playbook.yml
+ERROR! conflicting action statements: user, uid
+
+The error appears to be in '/root/playbook.yml': line 7, column 17, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+      file: path=hasnain state=directory
+                ^ here
+
+There appears to be both 'k=v' shorthand syntax and YAML in this task. Only one syntax may be used.
+[root@master ~]# vim playbook.yml
+[root@master ~]# ansible-playbook -i inventory  playbook.yml
+ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  mapping values are not allowed in this context
+
+The error appears to be in '/root/playbook.yml': line 9, column 17, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+      user: name=izan state=present
+                ^ here
+
+There appears to be both 'k=v' shorthand syntax and YAML in this task. Only one syntax may be used.
+[root@master ~]# vim playbook.yml
+[root@master ~]# ansible-playbook -i inventory  playbook.yml
+ERROR! conflicting action statements: state, uid
+
+The error appears to be in '/root/playbook.yml': line 10, column 7, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+      user:
+    - name: izan
+      ^ here
+[root@master ~]# vim playbook.yml
+[root@master ~]# ansible-playbook -i inventory  playbook.yml
+[WARNING]: While constructing a mapping from /root/playbook.yml, line 8, column
+7, found a duplicate dict key (name). Using last defined value only.
+ERROR! conflicting action statements: user, state
+
+The error appears to be in '/root/playbook.yml': line 7, column 17, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+      file: path=hasnain state=directory
+                ^ here
+
+There appears to be both 'k=v' shorthand syntax and YAML in this task. Only one syntax may be used.
+[root@master ~]# vim playbook.yml
+[root@master ~]# ansible-playbook -i inventory  playbook.yml
+
+PLAY [all] *********************************************************************
+
+TASK [Gathering Facts] *********************************************************
+[WARNING]: Platform linux on host 13.234.110.26 is using the discovered Python
+interpreter at /usr/bin/python3.9, but future installation of another Python
+interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-
+core/2.15/reference_appendices/interpreter_discovery.html for more information.
+ok: [13.234.110.26]
+
+TASK [create a file called haseeb] *********************************************
+changed: [13.234.110.26]
+
+TASK [create a directory called hasnain] ***************************************
+ok: [13.234.110.26]
+
+TASK [add user izan] ***********************************************************
+changed: [13.234.110.26]
+
+PLAY RECAP *********************************************************************
+13.234.110.26              : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+[root@master ~]# vim playbook.yml
+[root@master ~]# ansible-playbook -i inventory  playbook.yml
+ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  did not find expected '-' indicator
+
+The error appears to be in '/root/playbook.yml': line 21, column 6, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+        shell: /bin/bash
+     - name: remove user
+     ^ here
+[root@master ~]# vim playbook.yml
+[root@master ~]# ansible-playbook -i inventory  playbook.yml
+ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  did not find expected '-' indicator
+
+The error appears to be in '/root/playbook.yml': line 22, column 6, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+     - name: remove user
+     ^ here
+[root@master ~]# vim playbook.yml
+[root@master ~]# ansible-playbook -i inventory  playbook.yml
+ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  did not find expected '-' indicator
+
+The error appears to be in '/root/playbook.yml': line 22, column 6, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+     - name: remove user olduser
+     ^ here
+[root@master ~]# history
+    1  passwd
+    2  ssh-keygen
+    3  vim inventory
+    4  ssh-copy-id 13.234.110.26
+    5  vim playbook.yml
+    6  ansible-playbook -i inventory  playbook.yml
+    7  vim playbook.yml
+    8  ansible-playbook -i inventory  playbook.yml
+    9  vim playbook.yml
+   10  ansible-playbook -i inventory  playbook.yml
+   11  ll
+   12  vim playbook.yml
+   13  ansible-playbook -i inventory  playbook.yml
+   14  vim playbook.yml
+   15  ansible-playbook -i inventory  playbook.yml
+   16  vim playbook.yml
+   17  ansible-playbook -i inventory  playbook.yml
+   18  vim playbook.yml
+   19  ansible-playbook -i inventory  playbook.yml
+   20  vim playbook.yml
+   21  ansible-playbook -i inventory  playbook.yml
+   22  vim playbook.yml
+   23  ansible-playbook -i inventory  playbook.yml
+   24  vim playbook.yml
+   25  ansible-playbook -i inventory  playbook.yml
+   26  vim playbook.yml
+   27  ansible-playbook -i inventory  playbook.yml
+   28  vim playbook.yml
+   29  ansible-playbook -i inventory  playbook.yml
+   30  vim playbook.yml
+   31  ansible-playbook -i inventory  playbook.yml
+   32  history
+[root@master ~]# vim playbook.yml
+[root@master ~]# ansible-playbook -i inventory  playbook.yml
+
+PLAY [all] *******************************************************
+
+TASK [Gathering Facts] *******************************************
+[WARNING]: Platform linux on host 13.234.110.26 is using the disco
+installation of another Python interpreter could change the meanin
+core/2.15/reference_appendices/interpreter_discovery.html for more
+ok: [13.234.110.26]
+
+TASK [create a file called haseeb] *******************************
+changed: [13.234.110.26]
+
+TASK [create a directory called hasnain] *************************
+ok: [13.234.110.26]
+
+TASK [add user izan] *********************************************
+changed: [13.234.110.26]
+
+PLAY RECAP *******************************************************
+13.234.110.26              : ok=4    changed=2    unreachable=0
+
+[root@master ~]# Connection to ec2-3-110-94-250.ap-south-1.compute.amazonaws.com closed by remote host.
+Connection to ec2-3-110-94-250.ap-south-1.compute.amazonaws.com closed.
+                                                                 ✗
+
