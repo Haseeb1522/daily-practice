@@ -1,0 +1,436 @@
+
+[ec2-user@ip-172-31-47-60 ~]$ sudo -i
+[root@ip-172-31-47-60 ~]# hostnamectl set-hostname linux-p
+[root@ip-172-31-47-60 ~]# sudo -i
+[root@linux-p ~]# uname
+Linux
+[root@linux-p ~]# uname -r
+6.1.161-183.298.amzn2023.x86_64
+[root@linux-p ~]# ip
+Usage: ip [ OPTIONS ] OBJECT { COMMAND | help }
+       ip [ -force ] -batch filename
+where  OBJECT := { address | addrlabel | fou | help | ila | ioam | l2tp | link |
+                   macsec | maddress | monitor | mptcp | mroute | mrule |
+                   neighbor | neighbour | netconf | netns | nexthop | ntable |
+                   ntbl | route | rule | sr | stats | tap | tcpmetrics |
+                   token | tunnel | tuntap | vrf | xfrm }
+       OPTIONS := { -V[ersion] | -s[tatistics] | -d[etails] | -r[esolve] |
+                    -h[uman-readable] | -iec | -j[son] | -p[retty] |
+                    -f[amily] { inet | inet6 | mpls | bridge | link } |
+                    -4 | -6 | -M | -B | -0 |
+                    -l[oops] { maximum-addr-flush-attempts } | -echo | -br[ief] |
+                    -o[neline] | -t[imestamp] | -ts[hort] | -b[atch] [filename] |
+                    -rc[vbuf] [size] | -n[etns] name | -N[umeric] | -a[ll] |
+                    -c[olor]}
+[root@linux-p ~]# who
+ec2-user pts/0        2026-02-16 09:34 (104.28.244.131)
+ec2-user pts/1        2026-02-16 09:36 (104.28.244.131)
+root     pts/2        2026-02-16 09:36 (104.28.244.131)
+[root@linux-p ~]# hostname -i
+fe80::14:56ff:fe41:4689%ens5 172.31.47.60
+[root@linux-p ~]# ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host noprefixroute
+       valid_lft forever preferred_lft forever
+2: ens5: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9001 qdisc mq state UP group default qlen 1000
+    link/ether 02:14:56:41:46:89 brd ff:ff:ff:ff:ff:ff
+    altname enp0s5
+    altname eni-0c581cc01febfe44f
+    altname device-number-0.0
+    inet 172.31.47.60/20 metric 512 brd 172.31.47.255 scope global dynamic ens5
+       valid_lft 3155sec preferred_lft 3155sec
+    inet6 fe80::14:56ff:fe41:4689/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+[root@linux-p ~]# cat /etc/os-release
+NAME="Amazon Linux"
+VERSION="2023"
+ID="amzn"
+ID_LIKE="fedora"
+VERSION_ID="2023"
+PLATFORM_ID="platform:al2023"
+PRETTY_NAME="Amazon Linux 2023.10.20260202"
+ANSI_COLOR="0;33"
+CPE_NAME="cpe:2.3:o:amazon:amazon_linux:2023"
+HOME_URL="https://aws.amazon.com/linux/amazon-linux-2023/"
+DOCUMENTATION_URL="https://docs.aws.amazon.com/linux/"
+SUPPORT_URL="https://aws.amazon.com/premiumsupport/"
+BUG_REPORT_URL="https://github.com/amazonlinux/amazon-linux-2023"
+VENDOR_NAME="AWS"
+VENDOR_URL="https://aws.amazon.com/"
+SUPPORT_END="2029-06-30"
+[root@linux-p ~]# w
+ 09:43:29 up 9 min,  3 users,  load average: 0.00, 0.02, 0.00
+USER     TTY        LOGIN@   IDLE   JCPU   PCPU WHAT
+ec2-user pts/0     09:34    7:29   0.02s  0.02s sshd: ec2-user [priv]
+ec2-user pts/1     09:36    6:49   0.02s  0.01s sudo -i
+root     pts/2     09:36    1.00s  0.02s  0.00s w
+[root@linux-p ~]# hostnamectl
+ Static hostname: linux-p
+       Icon name: computer-vm
+         Chassis: vm 🖴
+      Machine ID: ec285079a3eea3d2b6224b066de671e7
+         Boot ID: 398a347d55ed4a22b5256c5606c30119
+  Virtualization: amazon
+Operating System: Amazon Linux 2023.10.20260202
+     CPE OS Name: cpe:2.3:o:amazon:amazon_linux:2023
+          Kernel: Linux 6.1.161-183.298.amzn2023.x86_64
+    Architecture: x86-64
+ Hardware Vendor: Amazon EC2
+  Hardware Model: t3.micro
+Firmware Version: 1.0
+[root@linux-p ~]# mkdir student
+[root@linux-p ~]# cd student
+[root@linux-p student]# mkdir linux-p
+[root@linux-p student]# cd linux-p
+[root@linux-p linux-p]# cd ..
+[root@linux-p student]# cd ..
+[root@linux-p ~]# pwd
+/root
+[root@linux-p ~]# mkdir linux-p
+[root@linux-p ~]# ll
+total 0
+drwxr-xr-x. 2 root root  6 Feb 16 09:46 linux-p
+drwxr-xr-x. 3 root root 21 Feb 16 09:45 student
+[root@linux-p ~]# cd student
+[root@linux-p student]# cd linux-p
+[root@linux-p linux-p]# pwd
+/root/student/linux-p
+[root@linux-p linux-p]# cd ..
+[root@linux-p student]# cd ..
+[root@linux-p ~]# ls
+linux-p  student
+[root@linux-p ~]# ls -a
+.  ..  .bash_logout  .bash_profile  .bashrc  .cshrc  .ssh  .tcshrc  linux-p  student
+[root@linux-p ~]# ls -la
+total 20
+dr-xr-x---.  5 root root 133 Feb 16 09:46 .
+dr-xr-xr-x. 18 root root 237 Feb  3 03:10 ..
+-rw-r--r--.  1 root root  18 Feb  2  2023 .bash_logout
+-rw-r--r--.  1 root root 141 Feb  2  2023 .bash_profile
+-rw-r--r--.  1 root root 429 Feb  2  2023 .bashrc
+-rw-r--r--.  1 root root 100 Feb  2  2023 .cshrc
+drwx------.  2 root root  29 Feb 16 09:33 .ssh
+-rw-r--r--.  1 root root 129 Feb  2  2023 .tcshrc
+drwxr-xr-x.  2 root root   6 Feb 16 09:46 linux-p
+drwxr-xr-x.  3 root root  21 Feb 16 09:45 student
+[root@linux-p ~]# mkdir dir1 dir2 dir3
+[root@linux-p ~]# ls -la
+total 20
+dr-xr-x---.  8 root root 169 Feb 16 09:50 .
+dr-xr-xr-x. 18 root root 237 Feb  3 03:10 ..
+-rw-r--r--.  1 root root  18 Feb  2  2023 .bash_logout
+-rw-r--r--.  1 root root 141 Feb  2  2023 .bash_profile
+-rw-r--r--.  1 root root 429 Feb  2  2023 .bashrc
+-rw-r--r--.  1 root root 100 Feb  2  2023 .cshrc
+drwx------.  2 root root  29 Feb 16 09:33 .ssh
+-rw-r--r--.  1 root root 129 Feb  2  2023 .tcshrc
+drwxr-xr-x.  2 root root   6 Feb 16 09:50 dir1
+drwxr-xr-x.  2 root root   6 Feb 16 09:50 dir2
+drwxr-xr-x.  2 root root   6 Feb 16 09:50 dir3
+drwxr-xr-x.  2 root root   6 Feb 16 09:46 linux-p
+drwxr-xr-x.  3 root root  21 Feb 16 09:45 student
+[root@linux-p ~]# ll
+total 0
+drwxr-xr-x. 2 root root  6 Feb 16 09:50 dir1
+drwxr-xr-x. 2 root root  6 Feb 16 09:50 dir2
+drwxr-xr-x. 2 root root  6 Feb 16 09:50 dir3
+drwxr-xr-x. 2 root root  6 Feb 16 09:46 linux-p
+drwxr-xr-x. 3 root root 21 Feb 16 09:45 student
+[root@linux-p ~]# mkdir -p h1/h2/h3
+[root@linux-p ~]# ll
+total 0
+drwxr-xr-x. 2 root root  6 Feb 16 09:50 dir1
+drwxr-xr-x. 2 root root  6 Feb 16 09:50 dir2
+drwxr-xr-x. 2 root root  6 Feb 16 09:50 dir3
+drwxr-xr-x. 3 root root 16 Feb 16 09:51 h1
+drwxr-xr-x. 2 root root  6 Feb 16 09:46 linux-p
+drwxr-xr-x. 3 root root 21 Feb 16 09:45 student
+[root@linux-p ~]# ls -la
+total 20
+dr-xr-x---.  9 root root 179 Feb 16 09:51 .
+dr-xr-xr-x. 18 root root 237 Feb  3 03:10 ..
+-rw-r--r--.  1 root root  18 Feb  2  2023 .bash_logout
+-rw-r--r--.  1 root root 141 Feb  2  2023 .bash_profile
+-rw-r--r--.  1 root root 429 Feb  2  2023 .bashrc
+-rw-r--r--.  1 root root 100 Feb  2  2023 .cshrc
+drwx------.  2 root root  29 Feb 16 09:33 .ssh
+-rw-r--r--.  1 root root 129 Feb  2  2023 .tcshrc
+drwxr-xr-x.  2 root root   6 Feb 16 09:50 dir1
+drwxr-xr-x.  2 root root   6 Feb 16 09:50 dir2
+drwxr-xr-x.  2 root root   6 Feb 16 09:50 dir3
+drwxr-xr-x.  3 root root  16 Feb 16 09:51 h1
+drwxr-xr-x.  2 root root   6 Feb 16 09:46 linux-p
+drwxr-xr-x.  3 root root  21 Feb 16 09:45 student
+[root@linux-p ~]# rm -rf *
+[root@linux-p ~]# ll
+total 0
+[root@linux-p ~]# ls -la
+total 20
+dr-xr-x---.  3 root root 103 Feb 16 09:52 .
+dr-xr-xr-x. 18 root root 237 Feb  3 03:10 ..
+-rw-r--r--.  1 root root  18 Feb  2  2023 .bash_logout
+-rw-r--r--.  1 root root 141 Feb  2  2023 .bash_profile
+-rw-r--r--.  1 root root 429 Feb  2  2023 .bashrc
+-rw-r--r--.  1 root root 100 Feb  2  2023 .cshrc
+drwx------.  2 root root  29 Feb 16 09:33 .ssh
+-rw-r--r--.  1 root root 129 Feb  2  2023 .tcshrc
+[root@linux-p ~]# ls -a
+.  ..  .bash_logout  .bash_profile  .bashrc  .cshrc  .ssh  .tcshrc
+[root@linux-p ~]# mkdir linux-p
+[root@linux-p ~]# cd linux-p
+[root@linux-p linux-p]# touch h1 h2 h3
+[root@linux-p linux-p]# ll
+total 0
+-rw-r--r--. 1 root root 0 Feb 16 09:54 h1
+-rw-r--r--. 1 root root 0 Feb 16 09:54 h2
+-rw-r--r--. 1 root root 0 Feb 16 09:54 h3
+[root@linux-p linux-p]# pwd
+/root/linux-p
+[root@linux-p linux-p]# touch -p h4/h5
+touch: invalid option -- 'p'
+Try 'touch --help' for more information.
+[root@linux-p linux-p]# mv h1 haseeb
+[root@linux-p linux-p]# ll
+total 0
+-rw-r--r--. 1 root root 0 Feb 16 09:54 h2
+-rw-r--r--. 1 root root 0 Feb 16 09:54 h3
+-rw-r--r--. 1 root root 0 Feb 16 09:54 haseeb
+[root@linux-p linux-p]# mkdir hasnain
+[root@linux-p linux-p]# mv haseeb /hasnain
+[root@linux-p linux-p]# ll
+total 0
+-rw-r--r--. 1 root root 0 Feb 16 09:54 h2
+-rw-r--r--. 1 root root 0 Feb 16 09:54 h3
+drwxr-xr-x. 2 root root 6 Feb 16 09:56 hasnain
+[root@linux-p linux-p]# cd hasnain
+[root@linux-p hasnain]# ll
+total 0
+[root@linux-p hasnain]# cd ..
+[root@linux-p linux-p]# ll
+total 0
+-rw-r--r--. 1 root root 0 Feb 16 09:54 h2
+-rw-r--r--. 1 root root 0 Feb 16 09:54 h3
+drwxr-xr-x. 2 root root 6 Feb 16 09:56 hasnain
+[root@linux-p linux-p]# mv h2 /linux-p/hasnain
+mv: cannot move 'h2' to '/linux-p/hasnain': No such file or directory
+[root@linux-p linux-p]# ll
+total 0
+-rw-r--r--. 1 root root 0 Feb 16 09:54 h2
+-rw-r--r--. 1 root root 0 Feb 16 09:54 h3
+drwxr-xr-x. 2 root root 6 Feb 16 09:56 hasnain
+[root@linux-p linux-p]# mv h2 hasnai/
+mv: cannot move 'h2' to 'hasnai/': Not a directory
+[root@linux-p linux-p]# mv h2 hasnain/
+[root@linux-p linux-p]# ll
+total 0
+-rw-r--r--. 1 root root  0 Feb 16 09:54 h3
+drwxr-xr-x. 2 root root 16 Feb 16 10:01 hasnain
+[root@linux-p linux-p]# cd hasnain
+[root@linux-p hasnain]# ll
+total 0
+-rw-r--r--. 1 root root 0 Feb 16 09:54 h2
+[root@linux-p hasnain]# mv he root/
+mv: cannot stat 'he': No such file or directory
+[root@linux-p hasnain]# mv h2 root/
+mv: cannot move 'h2' to 'root/': Not a directory
+[root@linux-p hasnain]# mv h2 /root/
+[root@linux-p hasnain]# ll
+total 0
+[root@linux-p hasnain]# cd ..
+[root@linux-p linux-p]# ll
+total 0
+-rw-r--r--. 1 root root 0 Feb 16 09:54 h3
+drwxr-xr-x. 2 root root 6 Feb 16 10:04 hasnain
+[root@linux-p linux-p]# cd ..
+[root@linux-p ~]# ll
+total 0
+-rw-r--r--. 1 root root  0 Feb 16 09:54 h2
+drwxr-xr-x. 3 root root 31 Feb 16 10:01 linux-p
+[root@linux-p ~]# mv /root/h2 /linux-p/hasnain/
+mv: cannot move '/root/h2' to '/linux-p/hasnain/': No such file or directory
+[root@linux-p ~]# mv /root/h2 /root/linux-p/hasnain/
+[root@linux-p ~]# touch abdul
+[root@linux-p ~]# ll
+total 0
+-rw-r--r--. 1 root root  0 Feb 16 10:10 abdul
+drwxr-xr-x. 3 root root 31 Feb 16 10:01 linux-p
+[root@linux-p ~]# mv abdul /root/linux-p/hasnain/
+[root@linux-p ~]# ll
+total 0
+drwxr-xr-x. 3 root root 31 Feb 16 10:01 linux-p
+[root@linux-p ~]# cd linux-p
+[root@linux-p linux-p]# ll
+total 0
+-rw-r--r--. 1 root root  0 Feb 16 09:54 h3
+drwxr-xr-x. 2 root root 29 Feb 16 10:10 hasnain
+[root@linux-p linux-p]# cd hasnain
+[root@linux-p hasnain]# ll
+total 0
+-rw-r--r--. 1 root root 0 Feb 16 10:10 abdul
+-rw-r--r--. 1 root root 0 Feb 16 09:54 h2
+[root@linux-p hasnain]# cd ..
+[root@linux-p linux-p]#
+[root@linux-p linux-p]# cd ..
+[root@linux-p ~]# ll
+total 0
+drwxr-xr-x. 3 root root 31 Feb 16 10:01 linux-p
+[root@linux-p ~]# rm -rf *
+[root@linux-p ~]# vim haseeb
+[root@linux-p ~]# cat haseeb
+haseeb
+hasnain
+mubashir
+shani
+nalain
+mujahid
+arshid
+izan
+sohail
+jawad
+shabi
+adeel
+[root@linux-p ~]# head -5 haseeb
+haseeb
+hasnain
+mubashir
+shani
+nalain
+[root@linux-p ~]# tail -5 haseeb
+izan
+sohail
+jawad
+shabi
+adeel
+[root@linux-p ~]# cat n haseeb
+cat: n: No such file or directory
+haseeb
+hasnain
+mubashir
+shani
+nalain
+mujahid
+arshid
+izan
+sohail
+jawad
+shabi
+adeel
+[root@linux-p ~]# cat n12 haseeb
+cat: n12: No such file or directory
+haseeb
+hasnain
+mubashir
+shani
+nalain
+mujahid
+arshid
+izan
+sohail
+jawad
+shabi
+adeel
+[root@linux-p ~]# cat -n haseeb
+     1  haseeb
+     2  hasnain
+     3  mubashir
+     4  shani
+     5  nalain
+     6  mujahid
+     7  arshid
+     8  izan
+     9  sohail
+    10  jawad
+    11  shabi
+    12  adeel
+[root@linux-p ~]# rm -rf *
+[root@linux-p ~]# history
+    1  uname
+    2  uname -r
+    3  ip
+    4  who
+    5  hostname -i
+    6  ip a
+    7  cat /etc/os-release
+    8  w
+    9  hostnamectl
+   10  mkdir student
+   11  cd student
+   12  mkdir linux-p
+   13  cd linux-p
+   14  cd ..
+   15  pwd
+   16  mkdir linux-p
+   17  ll
+   18  cd student
+   19  cd linux-p
+   20  pwd
+   21  cd ..
+   22  ls
+   23  ls -a
+   24  ls -la
+   25  mkdir dir1 dir2 dir3
+   26  ls -la
+   27  ll
+   28  mkdir -p h1/h2/h3
+   29  ll
+   30  ls -la
+   31  rm -rf *
+   32  ll
+   33  ls -la
+   34  ls -a
+   35  mkdir linux-p
+   36  cd linux-p
+   37  touch h1 h2 h3
+   38  ll
+   39  pwd
+   40  touch -p h4/h5
+   41  mv h1 haseeb
+   42  ll
+   43  mkdir hasnain
+   44  mv haseeb /hasnain
+   45  ll
+   46  cd hasnain
+   47  ll
+   48  cd ..
+   49  ll
+   50  mv h2 /linux-p/hasnain
+   51  ll
+   52  mv h2 hasnai/
+   53  mv h2 hasnain/
+   54  ll
+   55  cd hasnain
+   56  ll
+   57  mv he root/
+   58  mv h2 root/
+   59  mv h2 /root/
+   60  ll
+   61  cd ..
+   62  ll
+   63  cd ..
+   64  ll
+   65  mv /root/h2 /linux-p/hasnain/
+   66  mv /root/h2 /root/linux-p/hasnain/
+   67  touch abdul
+   68  ll
+   69  mv abdul /root/linux-p/hasnain/
+   70  ll
+   71  cd linux-p
+   72  ll
+   73  cd hasnain
+   74  ll
+   75  cd ..
+   76  ll
+   77  rm -rf *
+   78  vim haseeb
+   79  cat haseeb
+   80  head -5 haseeb
+   81  tail -5 haseeb
+   82  cat n haseeb
+   83  cat n12 haseeb
+   84  cat -n haseeb
+   85  rm -rf *
+   86  history
+[root@linux-p ~]#
