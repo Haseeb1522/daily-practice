@@ -1,0 +1,223 @@
+[root@linux-p ~]# vim haseeb
+[root@linux-p ~]# tail -5 haseeb
+awais
+foje
+mena
+adeel
+shabi
+[root@linux-p ~]# vim haseeb
+[root@linux-p ~]# tail -5 haseeb
+hassan
+awais
+foje
+mena
+adeel
+[root@linux-p ~]# vim haseeb
+[root@linux-p ~]# tail -5 haseeb
+hassan
+awais
+foje
+mena
+adeel
+[root@linux-p ~]# vim haseeb
+[root@linux-p ~]# vim hasnain abdul ali
+3 files to edit
+[root@linux-p ~]# ll
+total 8
+-rw-r--r--. 1 root root 69 Feb 16 15:22 haseeb
+-rw-r--r--. 1 root root 29 Feb 16 15:24 hasnain
+[root@linux-p ~]# vim hasnain abdul ali
+3 files to edit
+[root@linux-p ~]# :ls
+-bash: :ls: command not found
+[root@linux-p ~]# vim hasnain abdul ali
+3 files to edit
+[root@linux-p ~]# vim hasnain abdul ali
+3 files to edit
+
+[No write since last change]
+
+Press ENTER or type command to continue
+[root@linux-p ~]# ls
+abdul  ali  haseeb  hasnain
+[root@linux-p ~]# ls /root
+abdul  ali  haseeb  hasnain
+[root@linux-p ~]# ll
+total 16
+-rw-r--r--. 1 root root 27 Feb 16 15:36 abdul
+-rw-r--r--. 1 root root 17 Feb 16 15:37 ali
+-rw-r--r--. 1 root root 69 Feb 16 15:22 haseeb
+-rw-r--r--. 1 root root 29 Feb 16 15:27 hasnain
+[root@linux-p ~]# vim ali
+
+
+Press ENTER or type command to continue
+[root@linux-p ~]# rm -rf *
+[root@linux-p ~]# ll
+total 0
+[root@linux-p ~]# useradd Read from remote host ec2-65-2-179-26.ap-south-1.compute.amazonaws.com: Connection reset by peer
+Connection to ec2-65-2-179-26.ap-south-1.compute.amazonaws.com closed.
+client_loop: send disconnect: Connection reset by peer
+                                                                                                                                        ✗
+
+  2026-02-16   20:41.17   /home/mobaxterm/Desktop/Keypair  ssh -i "haseeb.pem" ec2-user@ec2-65-2-179-26.ap-south-1.compute.amazonaws.com
+X11 forwarding request failed on channel 0
+   ,     #_
+   ~\_  ####_        Amazon Linux 2023
+  ~~  \_#####\
+  ~~     \###|
+  ~~       \#/ ___   https://aws.amazon.com/linux/amazon-linux-2023
+   ~~       V~' '->
+    ~~~         /
+      ~~._.   _/
+         _/ _/
+       _/m/'
+Last login: Mon Feb 16 15:15:57 2026 from 104.28.212.124
+[ec2-user@linux-p ~]$ sudo -i
+[root@linux-p ~]# useradd Haseeb Hasnain Ali
+Usage: useradd [options] LOGIN
+       useradd -D
+       useradd -D [options]
+
+Options:
+      --badnames                do not check for bad names
+  -b, --base-dir BASE_DIR       base directory for the home directory of the
+                                new account
+      --btrfs-subvolume-home    use BTRFS subvolume for home directory
+  -c, --comment COMMENT         GECOS field of the new account
+  -d, --home-dir HOME_DIR       home directory of the new account
+  -D, --defaults                print or change default useradd configuration
+  -e, --expiredate EXPIRE_DATE  expiration date of the new account
+  -f, --inactive INACTIVE       password inactivity period of the new account
+  -g, --gid GROUP               name or ID of the primary group of the new
+                                account
+  -G, --groups GROUPS           list of supplementary groups of the new
+                                account
+  -h, --help                    display this help message and exit
+  -k, --skel SKEL_DIR           use this alternative skeleton directory
+  -K, --key KEY=VALUE           override /etc/login.defs defaults
+  -l, --no-log-init             do not add the user to the lastlog and
+                                faillog databases
+  -m, --create-home             create the user's home directory
+  -M, --no-create-home          do not create the user's home directory
+  -N, --no-user-group           do not create a group with the same name as
+                                the user
+  -o, --non-unique              allow to create users with duplicate
+                                (non-unique) UID
+  -p, --password PASSWORD       encrypted password of the new account
+  -r, --system                  create a system account
+  -R, --root CHROOT_DIR         directory to chroot into
+  -P, --prefix PREFIX_DIR       prefix directory where are located the /etc/* files
+  -s, --shell SHELL             login shell of the new account
+  -u, --uid UID                 user ID of the new account
+  -U, --user-group              create a group with the same name as the user
+  -Z, --selinux-user SEUSER     use a specific SEUSER for the SELinux user mapping
+
+[root@linux-p ~]# id Haseeb
+id: ‘Haseeb’: no such user
+[root@linux-p ~]# useradd Haseeb
+[root@linux-p ~]# id Haseeb
+uid=1001(Haseeb) gid=1001(Haseeb) groups=1001(Haseeb)
+[root@linux-p ~]# usermod -u 1028 Haseeb
+[root@linux-p ~]# id Haseeb
+uid=1028(Haseeb) gid=1001(Haseeb) groups=1001(Haseeb)
+[root@linux-p ~]# passwd Haseeb
+Changing password for user Haseeb.
+New password:
+BAD PASSWORD: The password contains the user name in some form
+Retype new password:
+passwd: all authentication tokens updated successfully.
+[root@linux-p ~]# useradd Hasnain
+[root@linux-p ~]# usermod -u 1030 Hasnain
+[root@linux-p ~]# passwd Hasnain
+Changing password for user Hasnain.
+New password:
+BAD PASSWORD: The password contains the user name in some form
+Retype new password:
+passwd: all authentication tokens updated successfully.
+[root@linux-p ~]# useradd Ali
+[root@linux-p ~]# usermod -u 1029 Ali
+[root@linux-p ~]# passwd Ali
+Changing password for user Ali.
+New password:
+Retype new password:
+Sorry, passwords do not match.
+New password:
+Retype new password:
+passwd: all authentication tokens updated successfully.
+[root@linux-p ~]# usermod -c " haseeb is football player " Haseeb
+[root@linux-p ~]# usermod -c " hasnain is football player " Hasnain
+[root@linux-p ~]# usermod -c " ali is my friend " Ali
+[root@linux-p ~]# id Haseeb
+uid=1028(Haseeb) gid=1001(Haseeb) groups=1001(Haseeb)
+[root@linux-p ~]# tail -n4 /etc/passwd
+ec2-user:x:1000:1000:EC2 Default User:/home/ec2-user:/bin/bash
+Haseeb:x:1028:1001: haseeb is football player :/home/Haseeb:/bin/bash
+Hasnain:x:1030:1029: hasnain is football player :/home/Hasnain:/bin/bash
+Ali:x:1029:1031: ali is my friend :/home/Ali:/bin/bash
+[root@linux-p ~]# Read from remote host ec2-65-2-179-26.ap-south-1.compute.amazonaws.com: Connection reset by peer
+Connection to ec2-65-2-179-26.ap-south-1.compute.amazonaws.com closed.
+client_loop: send disconnect: Connection reset by peer
+                                                                                                                                        ✗
+
+  2026-02-16   20:59.31   /home/mobaxterm/Desktop/Keypair  ssh -i "haseeb.pem" ec2-user@ec2-65-2-179-26.ap-south-1.compute.amazonaws.com
+X11 forwarding request failed on channel 0
+   ,     #_
+   ~\_  ####_        Amazon Linux 2023
+  ~~  \_#####\
+  ~~     \###|
+  ~~       \#/ ___   https://aws.amazon.com/linux/amazon-linux-2023
+   ~~       V~' '->
+    ~~~         /
+      ~~._.   _/
+         _/ _/
+       _/m/'
+Last login: Mon Feb 16 15:41:43 2026 from 104.28.244.123
+[ec2-user@linux-p ~]$ sudo -i
+[root@linux-p ~]# login Haseeb
+Hangup
+[ec2-user@linux-p ~]$ sudo -i Haseeb
+-bash: line 1: Haseeb: command not found
+[ec2-user@linux-p ~]$ sudo  Haseeb
+sudo: Haseeb: command not found
+[ec2-user@linux-p ~]$ su - Haseeb
+Password:
+[Haseeb@linux-p ~]$ Read from remote host ec2-65-2-179-26.ap-south-1.compute.amazonaws.com: Connection reset by peer
+Connection to ec2-65-2-179-26.ap-south-1.compute.amazonaws.com closed.
+client_loop: send disconnect: Connection reset by peer
+                                                                                                                                        ✗
+
+  2026-02-16   21:11.59   /home/mobaxterm/Desktop/Keypair  ssh -i "haseeb.pem" ec2-user@ec2-65-2-179-26.ap-south-1.compute.amazonaws.com
+X11 forwarding request failed on channel 0
+   ,     #_
+   ~\_  ####_        Amazon Linux 2023
+  ~~  \_#####\
+  ~~     \###|
+  ~~       \#/ ___   https://aws.amazon.com/linux/amazon-linux-2023
+   ~~       V~' '->
+    ~~~         /
+      ~~._.   _/
+         _/ _/
+       _/m/'
+Last login: Mon Feb 16 16:07:20 2026 from 104.28.212.123
+[ec2-user@linux-p ~]$ sudo -i
+[root@linux-p ~]# su - Haseeb
+Last login: Mon Feb 16 16:11:33 UTC 2026 on pts/0
+[Haseeb@linux-p ~]$ logout
+[root@linux-p ~]# su - Hasnain
+[Hasnain@linux-p ~]$ logout
+[root@linux-p ~]# userdell -r Haseeb
+-bash: userdell: command not found
+[root@linux-p ~]# userdel -r Haseeb
+[root@linux-p ~]# id Haseeb
+id: ‘Haseeb’: no such user
+[root@linux-p ~]# userdel -r Hasnain
+[root@linux-p ~]# userdel -r Ali
+[root@linux-p ~]# useradd Haseeb
+[root@linux-p ~]# userdel -r Haseeb
+[root@linux-p ~]# tail -n4 /etc/passwd
+stapunpriv:x:159:159:systemtap unprivileged user:/var/lib/stapunpriv:/sbin/nologin
+rpcuser:x:29:29:RPC Service User:/var/lib/nfs:/sbin/nologin
+tcpdump:x:72:72::/:/sbin/nologin
+ec2-user:x:1000:1000:EC2 Default User:/home/ec2-user:/bin/bash
+[root@linux-p ~]#
