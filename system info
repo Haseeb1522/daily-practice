@@ -1,0 +1,421 @@
+
+[root@linux-p ~]# cat /proc/cpuinfo
+processor       : 0
+vendor_id       : GenuineIntel
+cpu family      : 6
+model           : 85
+model name      : Intel(R) Xeon(R) Platinum 8259CL CPU @ 2.50GHz
+stepping        : 7
+microcode       : 0x5003901
+cpu MHz         : 2499.996
+cache size      : 36608 KB
+physical id     : 0
+siblings        : 2
+core id         : 0
+cpu cores       : 1
+apicid          : 0
+initial apicid  : 0
+fpu             : yes
+fpu_exception   : yes
+cpuid level     : 13
+wp              : yes
+flags           : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch cpuid_fault invpcid_single pti fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx avx512f avx512dq rdseed adx smap clflushopt clwb avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves ida arat pku ospke
+bugs            : cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs itlb_multihit mmio_stale_data retbleed gds bhi its
+bogomips        : 4999.99
+clflush size    : 64
+cache_alignment : 64
+address sizes   : 46 bits physical, 48 bits virtual
+power management:
+
+processor       : 1
+vendor_id       : GenuineIntel
+cpu family      : 6
+model           : 85
+model name      : Intel(R) Xeon(R) Platinum 8259CL CPU @ 2.50GHz
+stepping        : 7
+microcode       : 0x5003901
+cpu MHz         : 2499.996
+cache size      : 36608 KB
+physical id     : 0
+siblings        : 2
+core id         : 0
+cpu cores       : 1
+apicid          : 1
+initial apicid  : 1
+fpu             : yes
+fpu_exception   : yes
+cpuid level     : 13
+wp              : yes
+flags           : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch cpuid_fault invpcid_single pti fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx avx512f avx512dq rdseed adx smap clflushopt clwb avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves ida arat pku ospke
+bugs            : cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs itlb_multihit mmio_stale_data retbleed gds bhi its
+bogomips        : 4999.99
+clflush size    : 64
+cache_alignment : 64
+address sizes   : 46 bits physical, 48 bits virtual
+power management:
+
+[root@linux-p ~]#
+[root@linux-p ~]#
+[root@linux-p ~]# lscpu
+Architecture:                x86_64
+  CPU op-mode(s):            32-bit, 64-bit
+  Address sizes:             46 bits physical, 48 bits virtual
+  Byte Order:                Little Endian
+CPU(s):                      2
+  On-line CPU(s) list:       0,1
+Vendor ID:                   GenuineIntel
+  BIOS Vendor ID:            Intel(R) Corporation
+  Model name:                Intel(R) Xeon(R) Platinum 8259CL CPU @ 2.50GHz
+    BIOS Model name:         Intel(R) Xeon(R) Platinum 8259CL CPU @ 2.50GHz
+    CPU family:              6
+    Model:                   85
+    Thread(s) per core:      2
+    Core(s) per socket:      1
+    Socket(s):               1
+    Stepping:                7
+    BogoMIPS:                4999.99
+    Flags:                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht sysc
+                             all nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq
+                              ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervis
+                             or lahf_lm abm 3dnowprefetch cpuid_fault invpcid_single pti fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms inv
+                             pcid mpx avx512f avx512dq rdseed adx smap clflushopt clwb avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1
+                              xsaves ida arat pku ospke
+Virtualization features:
+  Hypervisor vendor:         KVM
+  Virtualization type:       full
+Caches (sum of all):
+  L1d:                       32 KiB (1 instance)
+  L1i:                       32 KiB (1 instance)
+  L2:                        1 MiB (1 instance)
+  L3:                        35.8 MiB (1 instance)
+NUMA:
+  NUMA node(s):              1
+  NUMA node0 CPU(s):         0,1
+Vulnerabilities:
+  Gather data sampling:      Unknown: Dependent on hypervisor status
+  Indirect target selection: Mitigation; Aligned branch/return thunks
+  Itlb multihit:             KVM: Mitigation: VMX unsupported
+  L1tf:                      Mitigation; PTE Inversion
+  Mds:                       Vulnerable: Clear CPU buffers attempted, no microcode; SMT Host state unknown
+  Meltdown:                  Mitigation; PTI
+  Mmio stale data:           Vulnerable: Clear CPU buffers attempted, no microcode; SMT Host state unknown
+  Reg file data sampling:    Not affected
+  Retbleed:                  Vulnerable
+  Spec rstack overflow:      Not affected
+  Spec store bypass:         Vulnerable
+  Spectre v1:                Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+  Spectre v2:                Mitigation; Retpolines; STIBP disabled; RSB filling; PBRSB-eIBRS Not affected; BHI Retpoline
+  Srbds:                     Not affected
+  Tsa:                       Not affected
+  Tsx async abort:           Not affected
+  Vmscape:                   Not affected
+[root@linux-p ~]# cat /proc/meminfo
+MemTotal:         938840 kB
+MemFree:          540296 kB
+MemAvailable:     627632 kB
+Buffers:            2168 kB
+Cached:           195312 kB
+SwapCached:            0 kB
+Active:            64776 kB
+Inactive:         183724 kB
+Active(anon):        312 kB
+Inactive(anon):    51140 kB
+Active(file):      64464 kB
+Inactive(file):   132584 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:             0 kB
+SwapFree:              0 kB
+Zswap:                 0 kB
+Zswapped:              0 kB
+Dirty:               972 kB
+Writeback:             0 kB
+AnonPages:         51124 kB
+Mapped:            48548 kB
+Shmem:               432 kB
+KReclaimable:      23836 kB
+Slab:              52776 kB
+SReclaimable:      23836 kB
+SUnreclaim:        28940 kB
+KernelStack:        1920 kB
+PageTables:         2196 kB
+SecPageTables:         0 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:      469420 kB
+Committed_AS:     253596 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:       10892 kB
+VmallocChunk:          0 kB
+Percpu:              912 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:         0 kB
+ShmemHugePages:        0 kB
+ShmemPmdMapped:        0 kB
+FileHugePages:         0 kB
+FilePmdMapped:         0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+Hugetlb:               0 kB
+DirectMap4k:       88496 kB
+DirectMap2M:      911360 kB
+DirectMap1G:           0 kB
+[root@linux-p ~]# fdisk -l
+Disk /dev/nvme0n1: 8 GiB, 8589934592 bytes, 16777216 sectors
+Disk model: Amazon Elastic Block Store
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 4096 bytes / 4096 bytes
+Disklabel type: gpt
+Disk identifier: D320B4AF-A7CC-406A-95C6-698CB954EADE
+
+Device           Start      End  Sectors Size Type
+/dev/nvme0n1p1   24576 16777182 16752607   8G Linux filesystem
+/dev/nvme0n1p127 22528    24575     2048   1M BIOS boot
+/dev/nvme0n1p128  2048    22527    20480  10M EFI System
+
+Partition table entries are not in disk order.
+[root@linux-p ~]# lsblk
+NAME          MAJ:MIN RM SIZE RO TYPE MOUNTPOINTS
+nvme0n1       259:0    0   8G  0 disk
+├─nvme0n1p1   259:1    0   8G  0 part /
+├─nvme0n1p127 259:2    0   1M  0 part
+└─nvme0n1p128 259:3    0  10M  0 part /boot/efi
+[root@linux-p ~]# ls blk
+ls: cannot access 'blk': No such file or directory
+[root@linux-p ~]# fd
+-bash: fd: command not found
+[root@linux-p ~]# df
+Filesystem       1K-blocks    Used Available Use% Mounted on
+devtmpfs              4096       0      4096   0% /dev
+tmpfs               469420       0    469420   0% /dev/shm
+tmpfs               187768     428    187340   1% /run
+/dev/nvme0n1p1     8310764 1623664   6687100  20% /
+tmpfs               469420       0    469420   0% /tmp
+/dev/nvme0n1p128     10202    1318      8884  13% /boot/efi
+tmpfs                93884       0     93884   0% /run/user/1000
+[root@linux-p ~]# df -m
+Filesystem       1M-blocks  Used Available Use% Mounted on
+devtmpfs                 4     0         4   0% /dev
+tmpfs                  459     0       459   0% /dev/shm
+tmpfs                  184     1       183   1% /run
+/dev/nvme0n1p1        8116  1586      6531  20% /
+tmpfs                  459     0       459   0% /tmp
+/dev/nvme0n1p128        10     2         9  13% /boot/efi
+tmpfs                   92     0        92   0% /run/user/1000
+[root@linux-p ~]# df -i
+Filesystem        Inodes IUsed   IFree IUse% Mounted on
+devtmpfs          113868   335  113533    1% /dev
+tmpfs             117355     1  117354    1% /dev/shm
+tmpfs             819200   546  818654    1% /run
+/dev/nvme0n1p1   4188096 48427 4139669    2% /
+tmpfs            1048576    15 1048561    1% /tmp
+/dev/nvme0n1p128       0     0       0     - /boot/efi
+tmpfs              23471    14   23457    1% /run/user/1000
+[root@linux-p ~]# iconfig
+-bash: iconfig: command not found
+[root@linux-p ~]# ipconfig
+-bash: ipconfig: command not found
+[root@linux-p ~]# ifconfig
+ens5: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 9001
+        inet 172.31.47.60  netmask 255.255.240.0  broadcast 172.31.47.255
+        inet6 fe80::14:56ff:fe41:4689  prefixlen 64  scopeid 0x20<link>
+        ether 02:14:56:41:46:89  txqueuelen 1000  (Ethernet)
+        RX packets 2844  bytes 361449 (352.9 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 2873  bytes 432453 (422.3 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 24  bytes 2040 (1.9 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 24  bytes 2040 (1.9 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+[root@linux-p ~]# ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host noprefixroute
+       valid_lft forever preferred_lft forever
+2: ens5: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9001 qdisc mq state UP group default qlen 1000
+    link/ether 02:14:56:41:46:89 brd ff:ff:ff:ff:ff:ff
+    altname enp0s5
+    altname eni-0c581cc01febfe44f
+    altname device-number-0.0
+    inet 172.31.47.60/20 metric 512 brd 172.31.47.255 scope global dynamic ens5
+       valid_lft 3599sec preferred_lft 3599sec
+    inet6 fe80::14:56ff:fe41:4689/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+[root@linux-p ~]# ip addr show
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host noprefixroute
+       valid_lft forever preferred_lft forever
+2: ens5: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9001 qdisc mq state UP group default qlen 1000
+    link/ether 02:14:56:41:46:89 brd ff:ff:ff:ff:ff:ff
+    altname enp0s5
+    altname eni-0c581cc01febfe44f
+    altname device-number-0.0
+    inet 172.31.47.60/20 metric 512 brd 172.31.47.255 scope global dynamic ens5
+       valid_lft 3571sec preferred_lft 3571sec
+    inet6 fe80::14:56ff:fe41:4689/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+[root@linux-p ~]# history
+    1  hostnamectl set-hostname linux-p
+    2  sudo -i
+    3  uname
+    4  uname -r
+    5  ip
+    6  who
+    7  hostname -i
+    8  ip a
+    9  cat /etc/os-release
+   10  w
+   11  hostnamectl
+   12  mkdir student
+   13  cd student
+   14  mkdir linux-p
+   15  cd linux-p
+   16  cd ..
+   17  pwd
+   18  mkdir linux-p
+   19  ll
+   20  cd student
+   21  cd linux-p
+   22  pwd
+   23  cd ..
+   24  ls
+   25  ls -a
+   26  ls -la
+   27  mkdir dir1 dir2 dir3
+   28  ls -la
+   29  ll
+   30  mkdir -p h1/h2/h3
+   31  ll
+   32  ls -la
+   33  rm -rf *
+   34  ll
+   35  ls -la
+   36  ls -a
+   37  mkdir linux-p
+   38  cd linux-p
+   39  touch h1 h2 h3
+   40  ll
+   41  pwd
+   42  touch -p h4/h5
+   43  mv h1 haseeb
+   44  ll
+   45  mkdir hasnain
+   46  mv haseeb /hasnain
+   47  ll
+   48  cd hasnain
+   49  ll
+   50  cd ..
+   51  ll
+   52  mv h2 /linux-p/hasnain
+   53  ll
+   54  mv h2 hasnai/
+   55  mv h2 hasnain/
+   56  ll
+   57  cd hasnain
+   58  ll
+   59  mv he root/
+   60  mv h2 root/
+   61  mv h2 /root/
+   62  ll
+   63  cd ..
+   64  ll
+   65  cd ..
+   66  ll
+   67  mv /root/h2 /linux-p/hasnain/
+   68  mv /root/h2 /root/linux-p/hasnain/
+   69  touch abdul
+   70  ll
+   71  mv abdul /root/linux-p/hasnain/
+   72  ll
+   73  cd linux-p
+   74  ll
+   75  cd hasnain
+   76  ll
+   77  cd ..
+   78  ll
+   79  rm -rf *
+   80  vim haseeb
+   81  cat haseeb
+   82  head -5 haseeb
+   83  tail -5 haseeb
+   84  cat n haseeb
+   85  cat n12 haseeb
+   86  cat -n haseeb
+   87  rm -rf *
+   88  history
+   89  ll
+   90  clear
+   91  vim haseeb
+   92  tail -5 haseeb
+   93  vim haseeb
+   94  tail -5 haseeb
+   95  vim haseeb
+   96  tail -5 haseeb
+   97  vim haseeb
+   98  vim hasnain abdul ali
+   99  ll
+  100  vim hasnain abdul ali
+  101  :ls
+  102  vim hasnain abdul ali
+  103  ls
+  104  ls /root
+  105  ll
+  106  vim ali
+  107  rm -rf *
+  108  ll
+  109  useradd Haseeb Hasnain Ali
+  110  id Haseeb
+  111  useradd Haseeb
+  112  id Haseeb
+  113  usermod -u 1028 Haseeb
+  114  id Haseeb
+  115  passwd Haseeb
+  116  useradd Hasnain
+  117  usermod -u 1030 Hasnain
+  118  passwd Hasnain
+  119  useradd Ali
+  120  usermod -u 1029 Ali
+  121  passwd Ali
+  122  usermod -c " haseeb is football player " Haseeb
+  123  usermod -c " hasnain is football player " Hasnain
+  124  usermod -c " ali is my friend " Ali
+  125  id Haseeb
+  126  tail -n4 /etc/passwd
+  127  login Haseeb
+  128  clear
+  129  cat /proc/cpuinfo
+  130  lscpu
+  131  cat /proc/cpuinfo
+  132  lscpu
+  133  cat /proc/meminfo
+  134  fdisk -l
+  135  lsblk
+  136  ls blk
+  137  fd
+  138  df
+  139  df -m
+  140  df -i
+  141  iconfig
+  142  ipconfig
+  143  ifconfig
+  144  ip addr
+  145  ip addr show
+  146  history
+[root@linux-p ~]#
