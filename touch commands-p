@@ -1,0 +1,175 @@
+[root@linux-p ~]# cat >>haseeb
+helo haseeb
+haseeb is a devops engineer
+[root@linux-p ~]# ls
+haseeb
+[root@linux-p ~]# ll
+total 4
+-rw-r--r--. 1 root root 77 Feb 27 05:06 haseeb
+[root@linux-p ~]# cat haseeb
+helo haseeb
+haseeb is a devops engineer
+[root@linux-p ~]#
+[root@linux-p ~]# touc hasnain
+-bash: touc: command not found
+[root@linux-p ~]# touch hasnain
+[root@linux-p ~]# cp haseeb hasnain
+cp: overwrite 'hasnain'? yes
+[root@linux-p ~]# cat hasnain
+helo haseeb
+haseeb is a devops engineer
+[root@linux-p ~]# cat >> hasnain
+
+[root@linux-p ~]# ll
+total 8
+-rw-r--r--. 1 root root 77 Feb 27 05:06 haseeb
+-rw-r--r--. 1 root root 78 Feb 27 05:14 hasnain
+[root@linux-p ~]# cat >> hasnain
+hasnain is a football player
+he is a very talnted player
+[root@linux-p ~]# cat hasnain
+helo haseeb
+haseeb is a devops engineer
+
+hasnain is a football player
+he is a very talnted player
+[root@linux-p ~]# cat hasnain >> haseeb
+[root@linux-p ~]# cat haseeb
+helo haseeb
+haseeb is a devops engineer
+helo haseeb
+haseeb is a devops engineer
+
+hasnain is a football player
+he is a very talnted player
+[root@linux-p ~]# nano haseeb
+[root@linux-p ~]# vim haseeb
+[root@linux-p ~]# cat haseeb
+helo haseeb
+haseeb is a devops engineer
+helo haseeb
+haseeb is a devops engineer
+
+hasnain is a football player
+he is a very talnted player
+[root@linux-p ~]# vim hasnain
+[root@linux-p ~]# cat hasnain
+helo  haseeb
+haseeb is a devops engineer
+hasnain is a football player
+he is a very talnted player
+[root@linux-p ~]# cat hasnain > haseeb
+[root@linux-p ~]# cat haseeb
+helo  haseeb
+haseeb is a devops engineer
+hasnain is a football player
+he is a very talnted player
+[root@linux-p ~]# vim haseeb
+[root@linux-p ~]# vim haseeb
+[root@linux-p ~]# tail -2 haseeb > hasnain
+[root@linux-p ~]# cat hasnain
+he is playing for suprior collage
+
+[root@linux-p ~]# sed -n '5p' haseeb > hasnain
+[root@linux-p ~]# cat hasnain
+hasnain is studying 11th class
+[root@linux-p ~]# sed -n '2,5p' haseeb > hasnain
+[root@linux-p ~]# cat hasnain
+haseeb is a devops engineer
+hasnain is a football player
+he is a very talnted player
+hasnain is studying 11th class
+[root@linux-p ~]# wc haseeb
+  7  29 165 haseeb
+[root@linux-p ~]#
+[root@linux-p ~]# top
+top - 05:38:20 up 35 min,  2 users,  load average: 0.00, 0.00, 0.00
+Tasks: 101 total,   1 running, 100 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.2 us,  0.0 sy,  0.0 ni, 99.8 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :    916.8 total,    506.8 free,    181.0 used,    229.0 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.    604.9 avail Mem
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0  172268  17340  10864 S   0.0   1.8   0:00.94 systemd
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.00 kthreadd
+      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 rcu_gp
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 rcu_par_gp
+      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 slub_flushwq
+      6 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 netns
+      8 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/0:0H-events_highpri
+     10 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 mm_percpu_wq
+     11 root      20   0       0      0      0 I   0.0   0.0   0:00.00 rcu_tasks_kthread
+     12 root      20   0       0      0      0 I   0.0   0.0   0:00.00 rcu_tasks_rude_kthread
+     13 root      20   0       0      0      0 I   0.0   0.0   0:00.00 rcu_tasks_trace_kthread
+     14 root      20   0       0      0      0 S   0.0   0.0   0:00.03 ksoftirqd/0
+     15 root      20   0       0      0      0 I   0.0   0.0   0:00.07 rcu_preempt
+     16 root      rt   0       0      0      0 S   0.0   0.0   0:00.00 migration/0
+     18 root      20   0       0      0      0 S   0.0   0.0   0:00.00 cpuhp/0
+     19 root      20   0       0      0      0 S   0.0   0.0   0:00.00 cpuhp/1
+     20 root      rt   0       0      0      0 S   0.0   0.0   0:00.02 migration/1
+     21 root      20   0       0      0      0 S   0.0   0.0   0:00.03 ksoftirqd/1
+     23 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/1:0H-events_highpri
+     25 root      20   0       0      0      0 I   0.0   0.0   0:00.23 kworker/u4:1-events_unbound
+     26 root      20   0       0      0      0 S   0.0   0.0   0:00.00 kdevtmpfs
+     27 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 inet_frag_wq
+     28 root      20   0       0      0      0 S   0.0   0.0   0:00.00 kauditd
+     29 root      20   0       0      0      0 S   0.0   0.0   0:00.00 khungtaskd
+     30 root      20   0       0      0      0 S   0.0   0.0   0:00.00 oom_reaper
+     32 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 writeback
+     33 root      20   0       0      0      0 S   0.0   0.0   0:00.10 kcompactd0
+     34 root      39  19       0      0      0 S   0.0   0.0   0:00.00 khugepaged
+     35 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 cryptd
+     36 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kintegrityd
+     37 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kblockd
+[root@linux-p ~]# htop
+-bash: htop: command not found
+[root@linux-p ~]# yum -y install htop
+Amazon Linux 2023 Kernel Livepatch repository                                                            256 kB/s |  31 kB     00:00
+Dependencies resolved.
+=========================================================================================================================================
+ Package                   Architecture                Version                                    Repository                        Size
+=========================================================================================================================================
+Installing:
+ htop                      x86_64                      3.2.1-87.amzn2023.0.3                      amazonlinux                      183 k
+
+Transaction Summary
+=========================================================================================================================================
+Install  1 Package
+
+Total download size: 183 k
+Installed size: 432 k
+Downloading Packages:
+htop-3.2.1-87.amzn2023.0.3.x86_64.rpm                                                                    4.8 MB/s | 183 kB     00:00
+-----------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                    2.4 MB/s | 183 kB     00:00
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                                                                                 1/1
+  Installing       : htop-3.2.1-87.amzn2023.0.3.x86_64                                                                               1/1
+  Running scriptlet: htop-3.2.1-87.amzn2023.0.3.x86_64                                                                               1/1
+  Verifying        : htop-3.2.1-87.amzn2023.0.3.x86_64                                                                               1/1
+=========================================================================================================================================
+WARNING:
+  A newer release of "Amazon Linux" is available.
+
+  Available Versions:
+
+  Version 2023.10.20260216:
+    Run the following command to upgrade to 2023.10.20260216:
+
+      dnf upgrade --releasever=2023.10.20260216
+
+    Release notes:
+     https://docs.aws.amazon.com/linux/al2023/release-notes/relnotes-2023.10.20260216.html
+
+=========================================================================================================================================
+
+Installed:
+  htop-3.2.1-87.amzn2023.0.3.x86_64
+
+Complete!
+[root@linux-p ~]# htop
+[root@linux-p ~]# htop
