@@ -1,0 +1,820 @@
+───────────────────────────────────────────────────────────┐
+     │                • MobaXterm Personal Edition v25.4 •                │
+     │              (X server, SSH client and network tools)              │
+     │                                                                    │
+     │ ⮞ Your computer drives are accessible through the /drives path     │
+     │ ⮞ Your DISPLAY is set to 10.5.28.251:0.0                           │
+     │ ⮞ When using SSH, your remote DISPLAY is automatically forwarded   │
+     │ ⮞ Each command status is specified by a special symbol (✓ or ✗)    │
+     │                                                                    │
+     │ • Important:                                                       │
+     │ This is MobaXterm Personal Edition. The Professional edition       │
+     │ allows you to customize MobaXterm for your company: you can add    │
+     │ your own logo, your parameters, your welcome message and generate  │
+     │ either an MSI installation package or a portable executable.       │
+     │ We can also modify MobaXterm or develop the plugins you need.      │
+     │ For more information: https://mobaxterm.mobatek.net/download.html  │
+     └────────────────────────────────────────────────────────────────────┘
+
+  2026-04-03   08:22.57   /home/mobaxterm  cd Desktop/Keypair
+                                                                                                                                        ✓
+
+  2026-04-03   08:23.11   /home/mobaxterm/Desktop/Keypair  ssh -i "haseeb.pem" ec2-user@ec2-13-233-233-254.ap-south-1.compute.am                   azonaws.com
+Warning: Permanently added 'ec2-13-233-233-254.ap-south-1.compute.amazonaws.com' (ED25519) to the list of known hosts.
+X11 forwarding request failed on channel 0
+   ,     #_
+   ~\_  ####_        Amazon Linux 2023
+  ~~  \_#####\
+  ~~     \###|
+  ~~       \#/ ___   https://aws.amazon.com/linux/amazon-linux-2023
+   ~~       V~' '->
+    ~~~         /
+      ~~._.   _/
+         _/ _/
+       _/m/'
+[ec2-user@ip-172-31-43-200 ~]$ sudo -i
+[root@ip-172-31-43-200 ~]# hostnamectl set-hostname linux-p
+[root@ip-172-31-43-200 ~]# su -
+[root@linux-p ~]# cat /proc/cpuinfo
+processor       : 0
+vendor_id       : GenuineIntel
+cpu family      : 6
+model           : 85
+model name      : Intel(R) Xeon(R) Platinum 8259CL CPU @ 2.50GHz
+stepping        : 7
+microcode       : 0x5003901
+cpu MHz         : 2499.998
+cache size      : 36608 KB
+physical id     : 0
+siblings        : 2
+core id         : 0
+cpu cores       : 1
+apicid          : 0
+initial apicid  : 0
+fpu             : yes
+fpu_exception   : yes
+cpuid level     : 13
+wp              : yes
+flags           : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe                   1gb rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2api                   c movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch cpuid_fault invpcid_single pti fsgsbase                    tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx avx512f avx512dq rdseed adx smap clflushopt clwb avx512cd avx512bw avx512vl xsaveopt xsav                   ec xgetbv1 xsaves ida arat pku ospke
+bugs            : cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs itlb_multihit mmio_stale_data retbleed gds bhi its
+bogomips        : 4999.99
+clflush size    : 64
+cache_alignment : 64
+address sizes   : 46 bits physical, 48 bits virtual
+power management:
+
+processor       : 1
+vendor_id       : GenuineIntel
+cpu family      : 6
+model           : 85
+model name      : Intel(R) Xeon(R) Platinum 8259CL CPU @ 2.50GHz
+stepping        : 7
+microcode       : 0x5003901
+cpu MHz         : 2499.998
+cache size      : 36608 KB
+physical id     : 0
+siblings        : 2
+core id         : 0
+cpu cores       : 1
+apicid          : 1
+initial apicid  : 1
+fpu             : yes
+fpu_exception   : yes
+cpuid level     : 13
+wp              : yes
+flags           : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe                   1gb rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2api                   c movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch cpuid_fault invpcid_single pti fsgsbase                    tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx avx512f avx512dq rdseed adx smap clflushopt clwb avx512cd avx512bw avx512vl xsaveopt xsav                   ec xgetbv1 xsaves ida arat pku ospke
+bugs            : cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs itlb_multihit mmio_stale_data retbleed gds bhi its
+bogomips        : 4999.99
+clflush size    : 64
+cache_alignment : 64
+address sizes   : 46 bits physical, 48 bits virtual
+power management:
+
+[root@linux-p ~]# lscpu
+Architecture:                x86_64
+  CPU op-mode(s):            32-bit, 64-bit
+  Address sizes:             46 bits physical, 48 bits virtual
+  Byte Order:                Little Endian
+CPU(s):                      2
+  On-line CPU(s) list:       0,1
+Vendor ID:                   GenuineIntel
+  BIOS Vendor ID:            Intel(R) Corporation
+  Model name:                Intel(R) Xeon(R) Platinum 8259CL CPU @ 2.50GHz
+    BIOS Model name:         Intel(R) Xeon(R) Platinum 8259CL CPU @ 2.50GHz
+    CPU family:              6
+    Model:                   85
+    Thread(s) per core:      2
+    Core(s) per socket:      1
+    Socket(s):               1
+    Stepping:                7
+    BogoMIPS:                4999.99
+    Flags:                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht sysc
+                             all nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq
+                              ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervis
+                             or lahf_lm abm 3dnowprefetch cpuid_fault invpcid_single pti fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms inv
+                             pcid mpx avx512f avx512dq rdseed adx smap clflushopt clwb avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1
+                              xsaves ida arat pku ospke
+Virtualization features:
+  Hypervisor vendor:         KVM
+  Virtualization type:       full
+Caches (sum of all):
+  L1d:                       32 KiB (1 instance)
+  L1i:                       32 KiB (1 instance)
+  L2:                        1 MiB (1 instance)
+  L3:                        35.8 MiB (1 instance)
+NUMA:
+  NUMA node(s):              1
+  NUMA node0 CPU(s):         0,1
+Vulnerabilities:
+  Gather data sampling:      Unknown: Dependent on hypervisor status
+  Indirect target selection: Mitigation; Aligned branch/return thunks
+  Itlb multihit:             KVM: Mitigation: VMX unsupported
+  L1tf:                      Mitigation; PTE Inversion
+  Mds:                       Vulnerable: Clear CPU buffers attempted, no microcode; SMT Host state unknown
+  Meltdown:                  Mitigation; PTI
+  Mmio stale data:           Vulnerable: Clear CPU buffers attempted, no microcode; SMT Host state unknown
+  Reg file data sampling:    Not affected
+  Retbleed:                  Vulnerable
+  Spec rstack overflow:      Not affected
+  Spec store bypass:         Vulnerable
+  Spectre v1:                Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+  Spectre v2:                Mitigation; Retpolines; STIBP disabled; RSB filling; PBRSB-eIBRS Not affected; BHI Retpoline
+  Srbds:                     Not affected
+  Tsa:                       Not affected
+  Tsx async abort:           Not affected
+  Vmscape:                   Not affected
+[root@linux-p ~]# cat /proc/meminfo
+MemTotal:         938812 kB
+MemFree:          570292 kB
+MemAvailable:     664368 kB
+Buffers:            2168 kB
+Cached:           207504 kB
+SwapCached:            0 kB
+Active:           115612 kB
+Inactive:         148516 kB
+Active(anon):        332 kB
+Inactive(anon):    54568 kB
+Active(file):     115280 kB
+Inactive(file):    93948 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:             0 kB
+SwapFree:              0 kB
+Zswap:                 0 kB
+Zswapped:              0 kB
+Dirty:              3624 kB
+Writeback:             0 kB
+AnonPages:         54524 kB
+Mapped:            44688 kB
+Shmem:               444 kB
+KReclaimable:      24104 kB
+Slab:              53696 kB
+SReclaimable:      24104 kB
+SUnreclaim:        29592 kB
+KernelStack:        1888 kB
+PageTables:         2200 kB
+SecPageTables:         0 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:      469404 kB
+Committed_AS:     258052 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:       10888 kB
+VmallocChunk:          0 kB
+Percpu:              920 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:         0 kB
+ShmemHugePages:        0 kB
+ShmemPmdMapped:        0 kB
+FileHugePages:         0 kB
+FilePmdMapped:         0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+Hugetlb:               0 kB
+DirectMap4k:       86448 kB
+DirectMap2M:      913408 kB
+DirectMap1G:           0 kB
+[root@linux-p ~]# lsmem
+RANGE                                 SIZE  STATE REMOVABLE BLOCK
+0x0000000000000000-0x000000003fffffff   1G online       yes   0-7
+
+Memory block size:       128M
+Total online memory:       1G
+Total offline memory:      0B
+[root@linux-p ~]# fdisk -l
+Disk /dev/nvme0n1: 8 GiB, 8589934592 bytes, 16777216 sectors
+Disk model: Amazon Elastic Block Store
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 4096 bytes / 4096 bytes
+Disklabel type: gpt
+Disk identifier: CB18B31A-ACC6-49AD-A331-6EB31B8F820D
+
+Device           Start      End  Sectors Size Type
+/dev/nvme0n1p1   24576 16777182 16752607   8G Linux filesystem
+/dev/nvme0n1p127 22528    24575     2048   1M BIOS boot
+/dev/nvme0n1p128  2048    22527    20480  10M EFI System
+
+Partition table entries are not in disk order.
+[root@linux-p ~]# ls blk
+ls: cannot access 'blk': No such file or directory
+[root@linux-p ~]# lsblk
+NAME          MAJ:MIN RM SIZE RO TYPE MOUNTPOINTS
+nvme0n1       259:0    0   8G  0 disk
+├─nvme0n1p1   259:1    0   8G  0 part /
+├─nvme0n1p127 259:2    0   1M  0 part
+└─nvme0n1p128 259:3    0  10M  0 part /boot/efi
+[root@linux-p ~]# df
+Filesystem       1K-blocks    Used Available Use% Mounted on
+devtmpfs              4096       0      4096   0% /dev
+tmpfs               469404       0    469404   0% /dev/shm
+tmpfs               187764     440    187324   1% /run
+/dev/nvme0n1p1     8310764 1621904   6688860  20% /
+tmpfs               469408       0    469408   0% /tmp
+/dev/nvme0n1p128     10202    1318      8884  13% /boot/efi
+tmpfs                93880       0     93880   0% /run/user/1000
+[root@linux-p ~]# df -m
+Filesystem       1M-blocks  Used Available Use% Mounted on
+devtmpfs                 4     0         4   0% /dev
+tmpfs                  459     0       459   0% /dev/shm
+tmpfs                  184     1       183   1% /run
+/dev/nvme0n1p1        8116  1584      6533  20% /
+tmpfs                  459     0       459   0% /tmp
+/dev/nvme0n1p128        10     2         9  13% /boot/efi
+tmpfs                   92     0        92   0% /run/user/1000
+[root@linux-p ~]# df -i
+Filesystem        Inodes IUsed   IFree IUse% Mounted on
+devtmpfs          108261   338  107923    1% /dev
+tmpfs             117351     1  117350    1% /dev/shm
+tmpfs             819200   553  818647    1% /run
+/dev/nvme0n1p1   4188096 48491 4139605    2% /
+tmpfs            1048576    15 1048561    1% /tmp
+/dev/nvme0n1p128       0     0       0     - /boot/efi
+tmpfs              23470    14   23456    1% /run/user/1000
+[root@linux-p ~]# ifconfig
+ens5: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 9001
+        inet 172.31.43.200  netmask 255.255.240.0  broadcast 172.31.47.255
+        inet6 fe80::c1:52ff:fefb:acdb  prefixlen 64  scopeid 0x20<link>
+        ether 02:c1:52:fb:ac:db  txqueuelen 1000  (Ethernet)
+        RX packets 44070  bytes 62702967 (59.7 MiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 2693  bytes 224195 (218.9 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 12  bytes 1020 (1020.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 12  bytes 1020 (1020.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+[root@linux-p ~]# ip
+Usage: ip [ OPTIONS ] OBJECT { COMMAND | help }
+       ip [ -force ] -batch filename
+where  OBJECT := { address | addrlabel | fou | help | ila | ioam | l2tp | link |
+                   macsec | maddress | monitor | mptcp | mroute | mrule |
+                   neighbor | neighbour | netconf | netns | nexthop | ntable |
+                   ntbl | route | rule | sr | stats | tap | tcpmetrics |
+                   token | tunnel | tuntap | vrf | xfrm }
+       OPTIONS := { -V[ersion] | -s[tatistics] | -d[etails] | -r[esolve] |
+                    -h[uman-readable] | -iec | -j[son] | -p[retty] |
+                    -f[amily] { inet | inet6 | mpls | bridge | link } |
+                    -4 | -6 | -M | -B | -0 |
+                    -l[oops] { maximum-addr-flush-attempts } | -echo | -br[ief] |
+                    -o[neline] | -t[imestamp] | -ts[hort] | -b[atch] [filename] |
+                    -rc[vbuf] [size] | -n[etns] name | -N[umeric] | -a[ll] |
+                    -c[olor]}
+[root@linux-p ~]# hostname
+linux-p
+[root@linux-p ~]# ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host noprefixroute
+       valid_lft forever preferred_lft forever
+2: ens5: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9001 qdisc mq state UP group default qlen 1000
+    link/ether 02:c1:52:fb:ac:db brd ff:ff:ff:ff:ff:ff
+    altname enp0s5
+    altname eni-0621f09698d84d019
+    altname device-number-0.0
+    inet 172.31.43.200/20 metric 512 brd 172.31.47.255 scope global dynamic ens5
+       valid_lft 2903sec preferred_lft 2903sec
+    inet6 fe80::c1:52ff:fefb:acdb/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+[root@linux-p ~]# hostname -i
+fe80::c1:52ff:fefb:acdb%ens5 172.31.43.200
+[root@linux-p ~]#
+logout
+[root@ip-172-31-43-200 ~]# su -
+Last login: Fri Apr  3 03:25:08 UTC 2026 on pts/1
+[root@linux-p ~]# uptime
+ 03:37:10 up 15 min,  2 users,  load average: 0.00, 0.00, 0.00
+[root@linux-p ~]# touch haseeb
+[root@linux-p ~]# ls
+haseeb
+[root@linux-p ~]# ll
+total 0
+-rw-r--r--. 1 root root 0 Apr  3 03:38 haseeb
+[root@linux-p ~]# cat>> haseeb
+haseeb is a devops engineer
+[root@linux-p ~]# cat haseeb
+haseeb is a devops engineer
+[root@linux-p ~]# touch hasnain
+[root@linux-p ~]# ll
+total 4
+-rw-r--r--. 1 root root 28 Apr  3 03:39 haseeb
+-rw-r--r--. 1 root root  0 Apr  3 03:40 hasnain
+[root@linux-p ~]# cat hasnain
+[root@linux-p ~]# cp haseeb hasnain
+cp: overwrite 'hasnain'? y
+[root@linux-p ~]# cat hasnain
+haseeb is a devops engineer
+[root@linux-p ~]# cat>> hasnain
+hasnain is football player
+[root@linux-p ~]# cat hasnain
+haseeb is a devops engineer
+hasnain is football player
+[root@linux-p ~]# cat hasnain >> haseeb
+[root@linux-p ~]# cat haseeb
+haseeb is a devops engineer
+haseeb is a devops engineer
+hasnain is football player
+[root@linux-p ~]# > haseeb
+[root@linux-p ~]# truncate -s 0 haseeb
+[root@linux-p ~]# cat haseeb
+[root@linux-p ~]# cat hasnain >> haseeb
+[root@linux-p ~]# cat haseeb
+haseeb is a devops engineer
+hasnain is football player
+[root@linux-p ~]# ll
+total 8
+-rw-r--r--. 1 root root 55 Apr  3 03:46 haseeb
+-rw-r--r--. 1 root root 55 Apr  3 03:42 hasnain
+[root@linux-p ~]# rm -f hasnain
+[root@linux-p ~]# ll
+total 4
+-rw-r--r--. 1 root root 55 Apr  3 03:46 haseeb
+[root@linux-p ~]# rm -rf *
+[root@linux-p ~]# ll
+total 0
+[root@linux-p ~]# touch haseeb(1....100)
+-bash: syntax error near unexpected token `('
+[root@linux-p ~]# touch haseeb{1..100}
+[root@linux-p ~]# ll
+total 0
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb1
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb10
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb100
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb11
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb12
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb13
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb14
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb15
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb16
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb17
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb18
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb19
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb2
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb20
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb21
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb22
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb23
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb24
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb25
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb26
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb27
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb28
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb29
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb3
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb30
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb31
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb32
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb33
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb34
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb35
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb36
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb37
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb38
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb39
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb4
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb40
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb41
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb42
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb43
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb44
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb45
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb46
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb47
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb48
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb49
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb5
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb50
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb51
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb52
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb53
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb54
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb55
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb56
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb57
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb58
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb59
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb6
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb60
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb61
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb62
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb63
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb64
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb65
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb66
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb67
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb68
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb69
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb7
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb70
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb71
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb72
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb73
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb74
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb75
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb76
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb77
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb78
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb79
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb8
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb80
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb81
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb82
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb83
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb84
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb85
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb86
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb87
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb88
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb89
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb9
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb90
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb91
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb92
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb93
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb94
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb95
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb96
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb97
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb98
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb99
+[root@linux-p ~]# ls
+haseeb1    haseeb15  haseeb21  haseeb28  haseeb34  haseeb40  haseeb47  haseeb53  haseeb6   haseeb66  haseeb72  haseeb79  haseeb85  haseeb91  haseeb98
+haseeb10   haseeb16  haseeb22  haseeb29  haseeb35  haseeb41  haseeb48  haseeb54  haseeb60  haseeb67  haseeb73  haseeb8   haseeb86  haseeb92  haseeb99
+haseeb100  haseeb17  haseeb23  haseeb3   haseeb36  haseeb42  haseeb49  haseeb55  haseeb61  haseeb68  haseeb74  haseeb80  haseeb87  haseeb93
+haseeb11   haseeb18  haseeb24  haseeb30  haseeb37  haseeb43  haseeb5   haseeb56  haseeb62  haseeb69  haseeb75  haseeb81  haseeb88  haseeb94
+haseeb12   haseeb19  haseeb25  haseeb31  haseeb38  haseeb44  haseeb50  haseeb57  haseeb63  haseeb7   haseeb76  haseeb82  haseeb89  haseeb95
+haseeb13   haseeb2   haseeb26  haseeb32  haseeb39  haseeb45  haseeb51  haseeb58  haseeb64  haseeb70  haseeb77  haseeb83  haseeb9   haseeb96
+haseeb14   haseeb20  haseeb27  haseeb33  haseeb4   haseeb46  haseeb52  haseeb59  haseeb65  haseeb71  haseeb78  haseeb84  haseeb90  haseeb97
+[root@linux-p ~]# rm -rf
+[root@linux-p ~]# ll
+total 0
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb1
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb10
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb100
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb11
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb12
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb13
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb14
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb15
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb16
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb17
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb18
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb19
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb2
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb20
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb21
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb22
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb23
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb24
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb25
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb26
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb27
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb28
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb29
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb3
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb30
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb31
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb32
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb33
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb34
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb35
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb36
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb37
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb38
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb39
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb4
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb40
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb41
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb42
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb43
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb44
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb45
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb46
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb47
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb48
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb49
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb5
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb50
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb51
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb52
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb53
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb54
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb55
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb56
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb57
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb58
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb59
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb6
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb60
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb61
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb62
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb63
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb64
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb65
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb66
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb67
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb68
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb69
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb7
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb70
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb71
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb72
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb73
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb74
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb75
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb76
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb77
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb78
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb79
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb8
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb80
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb81
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb82
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb83
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb84
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb85
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb86
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb87
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb88
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb89
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb9
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb90
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb91
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb92
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb93
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb94
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb95
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb96
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb97
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb98
+-rw-r--r--. 1 root root 0 Apr  3 03:50 haseeb99
+[root@linux-p ~]# rm -rf *
+[root@linux-p ~]# ll
+total 0
+[root@linux-p ~]# htop
+-bash: htop: command not found
+[root@linux-p ~]# yum -y install htop
+Amazon Linux 2023 Kernel Livepatch repository                                                                               263 kB/s |  31 kB     00:00
+Dependencies resolved.
+============================================================================================================================================================
+ Package                       Architecture                    Version                                           Repository                            Size
+============================================================================================================================================================
+Installing:
+ htop                          x86_64                          3.2.1-87.amzn2023.0.3                             amazonlinux                          183 k
+
+Transaction Summary
+============================================================================================================================================================
+Install  1 Package
+
+Total download size: 183 k
+Installed size: 432 k
+Downloading Packages:
+htop-3.2.1-87.amzn2023.0.3.x86_64.rpm                                                                                       5.0 MB/s | 183 kB     00:00
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                                       2.6 MB/s | 183 kB     00:00
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                                                                                                    1/1
+  Installing       : htop-3.2.1-87.amzn2023.0.3.x86_64                                                                                                  1/1
+  Running scriptlet: htop-3.2.1-87.amzn2023.0.3.x86_64                                                                                                  1/1
+  Verifying        : htop-3.2.1-87.amzn2023.0.3.x86_64                                                                                                  1/1
+
+Installed:
+  htop-3.2.1-87.amzn2023.0.3.x86_64
+
+Complete!
+[root@linux-p ~]#
+[root@linux-p ~]# htop
+[root@linux-p ~]# cat >> haseeb
+hasnain
+manzar
+ali
+mubashir
+tahseen
+gulfam
+adrees
+mubashir
+izan
+shani
+mujahid
+arshid
+nalain
+shabi
+adeel
+haidar
+[root@linux-p ~]# cat haseeb
+hasnain
+manzar
+ali
+mubashir
+tahseen
+gulfam
+adrees
+mubashir
+izan
+shani
+mujahid
+arshid
+nalain
+shabi
+adeel
+haidar
+[root@linux-p ~]# cat -5 haseeb
+cat: invalid option -- '5'
+Try 'cat --help' for more information.
+[root@linux-p ~]# head -5 haseeb
+hasnain
+manzar
+ali
+mubashir
+tahseen
+[root@linux-p ~]# tail -5 haseeb
+nalain
+shabi
+adeel
+haidar
+[root@linux-p ~]# sed -n '5,10'p
+
+[root@linux-p ~]# sed -n '5,10p'
+
+[root@linux-p ~]# sed -n '5,10'p haseeb
+tahseen
+gulfam
+adrees
+mubashir
+izan
+shani
+[root@linux-p ~]# wc haseeb
+ 19  18 140 haseeb
+[root@linux-p ~]# pwd
+/root
+[root@linux-p ~]#
+[root@linux-p ~]#
+[root@linux-p ~]# ll
+total 4
+-rw-r--r--. 1 root root 140 Apr  3 04:00 haseeb
+[root@linux-p ~]# rm -f haseeb
+[root@linux-p ~]# ll
+total 0
+[root@linux-p ~]# touch haseeb hasnain gulfam
+[root@linux-p ~]# ll
+total 0
+-rw-r--r--. 1 root root 0 Apr  3 04:09 gulfam
+-rw-r--r--. 1 root root 0 Apr  3 04:09 haseeb
+-rw-r--r--. 1 root root 0 Apr  3 04:09 hasnain
+[root@linux-p ~]# chmod 765 haseeb
+[root@linux-p ~]# ll
+total 0
+-rw-r--r--. 1 root root 0 Apr  3 04:09 gulfam
+-rwxrw-r-x. 1 root root 0 Apr  3 04:09 haseeb
+-rw-r--r--. 1 root root 0 Apr  3 04:09 hasnain
+[root@linux-p ~]# Read from remote host ec2-13-233-233-254.ap-south-1.compute.amazonaws.com: Connection reset by peer
+Connection to ec2-13-233-233-254.ap-south-1.compute.amazonaws.com closed.
+client_loop: send disconnect: Connection reset by peer
+                                                                                                                                                           ✗
+
+  2026-04-03   09:11.34   /home/mobaxterm/Desktop/Keypair  ssh -i "haseeb.pem" ec2-user@ec2-13-233-233-254.ap-south-1.compute.amazonaws.com
+X11 forwarding request failed on channel 0
+   ,     #_
+   ~\_  ####_        Amazon Linux 2023
+  ~~  \_#####\
+  ~~     \###|
+  ~~       \#/ ___   https://aws.amazon.com/linux/amazon-linux-2023
+   ~~       V~' '->
+    ~~~         /
+      ~~._.   _/
+         _/ _/
+       _/m/'
+Last login: Fri Apr  3 03:23:21 2026 from 111.68.102.12
+[ec2-user@linux-p ~]$ sudo -i
+[root@linux-p ~]# history
+    1  cat /proc/cpuinfo
+    2  lscpu
+    3  cat /proc/meminfo
+    4  lsmem
+    5  fdisk -l
+    6  ls blk
+    7  lsblk
+    8  df
+    9  df -m
+   10  df -i
+   11  ifconfig
+   12  ip
+   13  hostname
+   14  ip addr
+   15  hostname -i
+   16  history
+[root@linux-p ~]# ll
+total 0
+-rw-r--r--. 1 root root 0 Apr  3 04:09 gulfam
+-rwxrw-r-x. 1 root root 0 Apr  3 04:09 haseeb
+-rw-r--r--. 1 root root 0 Apr  3 04:09 hasnain
+[root@linux-p ~]# Read from remote host ec2-13-233-233-254.ap-south-1.compute.amazonaws.com: Connection reset by peer
+Connection to ec2-13-233-233-254.ap-south-1.compute.amazonaws.com closed.
+client_loop: send disconnect: Connection reset by peer
+                                                                                                                                                           ✗
+
+  2026-04-03   09:21.00   /home/mobaxterm/Desktop/Keypair  ssh -i "haseeb.pem" ec2-user@ec2-13-233-233-254.ap-south-1.compute.amazonaws.com\
+>                                                                                                                                                       X11 forwarding request failed on channel 0
+   ,     #_
+   ~\_  ####_        Amazon Linux 2023
+  ~~  \_#####\
+  ~~     \###|
+  ~~       \#/ ___   https://aws.amazon.com/linux/amazon-linux-2023
+   ~~       V~' '->
+    ~~~         /
+      ~~._.   _/
+         _/ _/
+       _/m/'
+Last login: Fri Apr  3 04:18:55 2026 from 116.71.174.83
+[ec2-user@linux-p ~]$ sudo -i
+[root@linux-p ~]# ll
+total 0
+-rw-r--r--. 1 root root 0 Apr  3 04:09 gulfam
+-rwxrw-r-x. 1 root root 0 Apr  3 04:09 haseeb
+-rw-r--r--. 1 root root 0 Apr  3 04:09 hasnain
+[root@linux-p ~]# chmod 654 gulfam
+[root@linux-p ~]# ll
+total 0
+-rw-r-xr--. 1 root root 0 Apr  3 04:09 gulfam
+-rwxrw-r-x. 1 root root 0 Apr  3 04:09 haseeb
+-rw-r--r--. 1 root root 0 Apr  3 04:09 hasnain
+[root@linux-p ~]# chmod 444 hasnain
+[root@linux-p ~]# ll
+total 0
+-rw-r-xr--. 1 root root 0 Apr  3 04:09 gulfam
+-rwxrw-r-x. 1 root root 0 Apr  3 04:09 haseeb
+-r--r--r--. 1 root root 0 Apr  3 04:09 hasnain
+[root@linux-p ~]# chmod 222 hasnain
+[root@linux-p ~]# ll
+total 0
+-rw-r-xr--. 1 root root 0 Apr  3 04:09 gulfam
+-rwxrw-r-x. 1 root root 0 Apr  3 04:09 haseeb
+--w--w--w-. 1 root root 0 Apr  3 04:09 hasnain
+[root@linux-p ~]# chmod 111 hasnain
+[root@linux-p ~]# ll
+total 0
+-rw-r-xr--. 1 root root 0 Apr  3 04:09 gulfam
+-rwxrw-r-x. 1 root root 0 Apr  3 04:09 haseeb
+---x--x--x. 1 root root 0 Apr  3 04:09 hasnain
+[root@linux-p ~]# history
+    1  cat /proc/cpuinfo
+    2  lscpu
+    3  cat /proc/meminfo
+    4  lsmem
+    5  fdisk -l
+    6  ls blk
+    7  lsblk
+    8  df
+    9  df -m
+   10  df -i
+   11  ifconfig
+   12  ip
+   13  hostname
+   14  ip addr
+   15  hostname -i
+   16  ll
+   17  chmod 654 gulfam
+   18  ll
+   19  chmod 444 hasnain
+   20  ll
+   21  chmod 222 hasnain
+   22  ll
+   23  chmod 111 hasnain
+   24  ll
+   25  history
