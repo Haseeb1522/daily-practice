@@ -1,0 +1,54 @@
+# System Info Commands
+cat /proc/cpuinfo
+lscpu
+cat /proc/meminfo
+lsmem
+fdisk -l
+lsblk
+df
+df -m
+df -i
+ifconfig
+ip
+hostname
+ip addr
+hostname -i
+uptime
+pwd
+
+# File Creation and Viewing
+touch haseeb
+touch hasnain
+touch gulfam
+ls
+ll
+cat >> haseeb
+cat haseeb
+cat >> hasnain
+cat hasnain
+cat hasnain >> haseeb
+> haseeb
+truncate -s 0 haseeb
+cat hasnain >> haseeb
+
+# File Operations
+cp haseeb hasnain
+rm -f hasnain
+rm -f haseeb
+rm -rf *
+
+# Multiple File Creation
+touch haseeb{1..100}
+
+# Viewing File Contents
+head -5 haseeb
+tail -5 haseeb
+sed -n '5,10p' haseeb
+wc haseeb
+
+# File Permissions
+chmod 765 haseeb
+chmod 654 gulfam
+chmod 444 hasnain
+chmod 222 hasnain
+chmod 111 hasnain
